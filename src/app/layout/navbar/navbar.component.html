@@ -1,0 +1,29 @@
+ <mat-toolbar color="primary">
+   <div fxFlex fxLayout fxLayoutAlign="start">
+
+     <a mat-button [routerLink]="['/home']">
+       <h1>UpMusic</h1>
+     </a>
+
+     <a mat-button [routerLink]="['']">
+         <mat-icon>library_music</mat-icon>
+       <span>Musicas</span>
+     </a>
+
+     <a mat-button [routerLink]="['']">
+       <mat-icon>favorite</mat-icon>
+       <span>Favoritas</span>
+     </a>
+
+     <button mat-button [matMenuTriggerFor]="menu">
+       <mat-icon>person</mat-icon>
+       <span>Admin</span>
+     </button>
+     <mat-menu #menu="matMenu">
+       <button mat-menu-item [routerLink]="['']">
+         Controle de Musicas
+       </button>
+     </mat-menu>
+
+   </div>
+ </mat-toolbar>
