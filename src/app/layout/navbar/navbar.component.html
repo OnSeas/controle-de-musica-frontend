@@ -5,12 +5,12 @@
        <h1>UpMusic</h1>
      </a>
 
-     <a mat-button [routerLink]="['']">
+     <a mat-button [routerLink]="['musicas']">
          <mat-icon>library_music</mat-icon>
        <span>Musicas</span>
      </a>
 
-     <a mat-button [routerLink]="['']">
+     <a mat-button [routerLink]="['musicas/favoritas']">
        <mat-icon>favorite</mat-icon>
        <span>Favoritas</span>
      </a>
@@ -20,7 +20,7 @@
        <span>Admin</span>
      </button>
      <mat-menu #menu="matMenu">
-       <button mat-menu-item [routerLink]="['']">
+       <button mat-menu-item [routerLink]="['admin/musica']">
          Controle de Musicas
        </button>
      </mat-menu>
