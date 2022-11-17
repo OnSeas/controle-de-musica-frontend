@@ -17,7 +17,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 
 import { CrudMusicaModule } from './pages/admin/crud-musica/crud-musica.module';
-import {MusicModule} from "./pages/music/music.module";
 
 import { HttpClientModule } from "@angular/common/http";
 
@@ -38,7 +37,6 @@ import { HttpClientModule } from "@angular/common/http";
     MatMenuModule,
     MatListModule,
     CrudMusicaModule,
-    MusicModule,
     HttpClientModule
   ],
   providers: [],

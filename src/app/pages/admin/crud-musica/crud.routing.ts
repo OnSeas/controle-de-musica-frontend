@@ -4,6 +4,13 @@ import {MusicaFormComponent} from "./musica-form/musica-form.component";
 
 export const CrudMusicaRoutes: Routes = [
     {
+      //path: "musica",
+      //component: MusicaListComponent, // TODO Criar os componentes de Musica View List e Music View (são os que incluem apenas view e a funcionalidade)
+      //children: []
+
+    },
+
+    {
       path: "admin/musica",
       component: MusicaListComponent,
       children: [

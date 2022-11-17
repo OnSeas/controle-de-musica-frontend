@@ -12,9 +12,20 @@ export class MusicaService {
   constructor(private http: HttpClient) { }
 
   public getMusicas(): Observable<Musica[]>{
-    return this.http.get<Musica[]>(this.urlBackend+"/musica")
+    return this.http.get<Musica[]>(this.urlBackend+"/musica");
   }
 
+  public salvar(musica: Musica): Observable<Musica>{
+    if(!musica.idMusica){
+      return this.http.post<Musica>(this.urlBackend+"/musica", musica);
+    }else{
+      return this.http.patch<Musica>(this.urlBackend+"/musica/"+ musica.idMusica, musica);
+    }
+  }
+
+  public getByID(id: number): Observable<Musica>{
+    return this.http.get<Musica>(this.urlBackend+"/musica/" + id);
+  }
 
   public remover(id: number): Observable<Musica>{
     return this.http.delete<Musica>(this.urlBackend+"/musica/"+id);
