@@ -16,6 +16,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 
+import { CrudMusicaModule } from './pages/admin/crud-musica/crud-musica.module';
+import {MusicModule} from "./pages/music/music.module";
+
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -31,7 +36,10 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    CrudMusicaModule,
+    MusicModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

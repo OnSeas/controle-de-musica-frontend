@@ -18,6 +18,10 @@ export const CrudMusicaRoutes: Routes = [
         {
           path: "editar:id",
           component: MusicaFormComponent
+        },
+        {
+          path: "visualizar:id",
+          component: MusicaFormComponent
         }
       ]
     }

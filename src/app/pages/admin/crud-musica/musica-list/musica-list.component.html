@@ -3,6 +3,13 @@
     <h1>Bem-Vindo ao Controle de Musicas!</h1>
   </div>
   <div class="Page-list">
-
+    <mat-list role="list"> <!-- TODO Ver pq quando remove de musicas não saí daqui junto! -->
+      <mat-list-item role="listitem" *ngFor="let musica of musicas; let elementIndex = index;">
+        {{elementIndex + 1}} - {{musica.titulo}} de {{musica.artista}}
+        <button mat-icon-button [routerLink]="['/musica', 'visualizar', musica.idMusica]"> <mat-icon>pageview</mat-icon> </button>
+        <button mat-icon-button [routerLink]="['/musica', 'editar', musica.idMusica]"> <mat-icon>edit</mat-icon> </button>
+        <button mat-icon-button (click)="confirmarRemocao(musica)"> <mat-icon>delete</mat-icon> </button>
+      </mat-list-item>
+    </mat-list>
   </div>
 </div>

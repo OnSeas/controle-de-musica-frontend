@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CrudMusicaRoutes } from './crud.routing';
 import { MusicaListComponent } from './musica-list/musica-list.component';
 import { MusicaFormComponent } from './musica-form/musica-form.component';
 
-import {MatListModule} from '@angular/material/list';
+import {MatListModule} from "@angular/material/list";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import {RouterLink} from "@angular/router";
+
 
 
 @NgModule({
@@ -18,10 +19,10 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
-    CrudMusicaRoutes,
     MatListModule,
+    MatButtonModule,
     MatIconModule,
-    MatButtonModule
+    RouterLink
   ]
 })
 export class CrudMusicaModule { }
