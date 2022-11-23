@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MusicaListComponent } from './musica-list/musica-list.component';
 import { MusicaFormComponent } from './musica-form/musica-form.component';
 
-import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {MatTableModule} from '@angular/material/table';
 
 import {RouterLink} from "@angular/router";
 
@@ -19,10 +19,10 @@ import {RouterLink} from "@angular/router";
   ],
   imports: [
     CommonModule,
-    MatListModule,
     MatButtonModule,
     MatIconModule,
-    RouterLink
+    RouterLink,
+    MatTableModule
   ]
 })
 export class CrudMusicaModule { }

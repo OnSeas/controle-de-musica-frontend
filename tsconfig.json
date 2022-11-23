@@ -21,7 +21,8 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization":false // Problema de paginator sem inicialização.
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
