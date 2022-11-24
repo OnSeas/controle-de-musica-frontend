@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeRoutes} from "./pages/home/home.routing";
-import {CrudMusicaRoutes} from "./pages/admin/crud-musica/crud.routing";
 
 const routes: Routes = [
   ...HomeRoutes,
-  ...CrudMusicaRoutes
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'musicas',
+    loadChildren: () => import('./pages/music/music.module').then(mod => mod.MusicModule)
+  }
 ];
 
 @NgModule({

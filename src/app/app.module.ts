@@ -12,13 +12,14 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
-
-import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 
-import { CrudMusicaModule } from './pages/admin/crud-musica/crud-musica.module';
+import { HomeComponent } from './pages/home/home.component';
+import { MusicModule } from "./pages/music/music.module";
+import {AdminModule} from "./pages/music/admin/admin.module";
 
 import { HttpClientModule } from "@angular/common/http";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -36,7 +37,9 @@ import { HttpClientModule } from "@angular/common/http";
     MatToolbarModule,
     MatMenuModule,
     MatListModule,
-    CrudMusicaModule,
+    MusicModule,
+    AdminModule,
+    RouterModule,
     HttpClientModule
   ],
   providers: [],

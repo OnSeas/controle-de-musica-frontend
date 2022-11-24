@@ -2,7 +2,7 @@ export class Musica {
 
   idMusica!: number;
   titulo!: string;
-  estiloMusical!: string; //TODO ANALISAR SE TA FUNCIONANDO.
+  estiloMusical!: string;
   duracao!: string;
   artista!: string;
   compositor!: number;
