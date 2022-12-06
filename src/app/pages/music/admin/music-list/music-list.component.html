@@ -1,0 +1,47 @@
+<div style="margin: 0.75%">
+  <div class="Page-Title">
+    <h1>Bem-Vindo ao Controle de Musicas!</h1>
+    <a mat-button [routerLink]="['novo']">
+      Adcionar música
+    </a>
+  </div>
+  <div class="Page-list">
+
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="posicao">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let element; let elementIndex = index;"> {{elementIndex + 1}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef>Título</th>
+        <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="artista">
+        <th mat-header-cell *matHeaderCellDef>Artista</th>
+        <td mat-cell *matCellDef="let element"> {{element.artista}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acao">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let element">
+          <a mat-icon-button [routerLink]="['visualizar', element.idMusica]">
+            <mat-icon>remove_red_eye</mat-icon>
+          </a>
+          <a mat-icon-button [routerLink]="['editar', element.idMusica]">
+            <mat-icon>edit</mat-icon>
+          </a>
+          <a mat-icon-button (click)="confirmarRemocao(element)">
+            <mat-icon>delete</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</div>
