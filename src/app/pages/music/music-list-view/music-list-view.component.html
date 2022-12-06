@@ -1,9 +1,6 @@
 <div style="margin: 0.75%">
   <div class="Page-Title">
-    <h1>Bem-Vindo ao Controle de Musicas!</h1>
-    <a mat-button [routerLink]="['novo']">
-      Adcionar música
-    </a>
+    <h1>Bem-Vindo ao UpMusic, estas são às músicas disponíveis!</h1>
   </div>
   <div class="Page-list">
 
@@ -27,11 +24,8 @@
       <ng-container matColumnDef="acao">
         <th mat-header-cell *matHeaderCellDef>Ações</th>
         <td mat-cell *matCellDef="let element">
-          <a mat-icon-button [routerLink]="['editar', element.idMusica]">
-            <mat-icon>edit</mat-icon>
-          </a>
-          <a mat-icon-button (click)="confirmarRemocao(element)">
-            <mat-icon>delete</mat-icon>
+          <a mat-icon-button (click)="favoritar(element)">
+            <mat-icon>favorite_border</mat-icon>
           </a>
         </td>
       </ng-container>

@@ -15,8 +15,4 @@ export const AdminRoutes: Routes = [
     path: "editar/:id",
     component: MusicFormComponent
   },
-  {
-    path: "visualizar/:id",
-    component: MusicFormComponent
-  },
 ];

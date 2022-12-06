@@ -35,7 +35,7 @@ export class MusicListComponent implements OnInit {
         this.dataSource.data = this.dataSource.data.filter((element) => element.idMusica !== musica.idMusica);
         alert("A música foi excluída com sucesso!");
       }, erro => {
-        alert("Erro ao excluir o música. Mensagem: "+erro?.error?.message);
+        alert("Erro ao excluir a música. Mensagem: "+erro?.error?.message);
       });
     }
   }
