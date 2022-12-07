@@ -15,6 +15,10 @@ export class MusicaService {
     return this.http.get<Musica[]>(this.urlBackend+"/musica");
   }
 
+  public getMusicasFav(): Observable<Musica[]>{
+    return this.http.get<Musica[]>(this.urlBackend+"/musica/favoritas");
+  }
+
   public salvar(musica: Musica): Observable<Musica>{
     if(!musica.idMusica){
       return this.http.post<Musica>(this.urlBackend+"/musica", musica);
@@ -33,5 +37,8 @@ export class MusicaService {
 
   public favoritar(id: number): Observable<Musica>{
     return this.http.patch<Musica>(this.urlBackend+"/musica/fav/"+ id, this.getByID(id));
+  }
+  public desFavoritar(id: number): Observable<Musica>{
+    return this.http.patch<Musica>(this.urlBackend+"/musica/unfav/"+ id, this.getByID(id));
   }
 }

@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 import {MusicListViewComponent} from './music-list-view/music-list-view.component';
 import {MusicViewComponent} from "./music-view/music-view.component";
+import {FavoritesComponent} from "./favorites/favorites.component";
 
 export const MusicRoutes: Routes = [
   {
-    path: 'listar',
+    path: '',
     component: MusicListViewComponent
   },
   {
@@ -12,9 +13,8 @@ export const MusicRoutes: Routes = [
     component: MusicViewComponent
   },
   {
-    path: '',
-    redirectTo: 'listar',
-    pathMatch: "full"
+    path: 'favoritas',
+    component: FavoritesComponent
   },
   {
     path: 'admin/musica',

@@ -14,25 +14,42 @@ export class MusicListViewComponent implements OnInit {
 
   displayedColumns: string[] = ['posicao', 'titulo', 'artista', 'acao'];
 
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-
   constructor(private musicaService: MusicaService) { }
 
   ngOnInit(): void {
     this.musicaService.getMusicas().subscribe((musicas:Musica[]) =>{
       console.log("musica", musicas);
       this.dataSource.data = musicas; // Colocando as musicas no dataSouce
-      this.dataSource.paginator = this.paginator;
+    })
+  }
+
+  refresh(){
+    this.musicaService.getMusicas().subscribe((musicas:Musica[]) =>{
+      console.log("musica", musicas);
+      this.dataSource.data = musicas; // Colocando as musicas no dataSouce
     })
   }
 
   favoritar(musica:Musica){
-    this.musicaService.favoritar(musica.idMusica).subscribe(() =>{
-      console.log("favorita: "+musica.favorito);
-      alert("Música favoritada!");
-    }, erro=>{
-      alert("Erro ao favoritar música. Mensagem: "+erro?.error?.message);
-    })
+    if(!musica.favorito){
+      this.musicaService.favoritar(musica.idMusica).subscribe(() =>{
+        this.refresh();
+        alert("Música favoritada!");
+      }, erro=>{
+        alert("Erro ao favoritar música. Mensagem: "+erro?.error?.message);
+      })
+    }
+    else{
+      let UnfavConfirmMsg = "A música já é favorita, deseja tirar a música das favoritas?";
+      if(confirm(UnfavConfirmMsg)) {
+        this.musicaService.desFavoritar(musica.idMusica).subscribe(() => {
+          this.refresh();
+          alert("Música removida dos favoritos!");
+        }, erro => {
+          alert("Erro ao remover música dos favoritos. Mensagem: " + erro?.error?.message);
+        })
+      }
+    }
   }
 
 }

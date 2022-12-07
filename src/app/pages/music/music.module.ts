@@ -7,12 +7,14 @@ import {RouterModule} from "@angular/router";
 import {MusicRoutes} from "./music.routing";
 import {MatIconModule} from "@angular/material/icon";
 import {MatTableModule} from "@angular/material/table";
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({
   declarations: [
     MusicListViewComponent,
-    MusicViewComponent
+    MusicViewComponent,
+    FavoritesComponent
   ],
   imports: [
     CommonModule,

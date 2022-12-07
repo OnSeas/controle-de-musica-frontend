@@ -15,15 +15,12 @@ export class MusicListComponent implements OnInit {
 
   displayedColumns: string[] = ['posicao', 'titulo', 'artista', 'acao'];
 
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator; //
-
   constructor(private musicaService: MusicaService) { }
 
   ngOnInit(): void {
     this.musicaService.getMusicas().subscribe((musicas:Musica[]) =>{
       console.log("musica", musicas);
       this.dataSource.data = musicas; // Colocando as musicas no dataSouce
-      this.dataSource.paginator = this.paginator;
     })
   }
 
