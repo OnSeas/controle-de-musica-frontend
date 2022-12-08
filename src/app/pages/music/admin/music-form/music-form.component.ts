@@ -15,7 +15,7 @@ export class MusicFormComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id'); //pegar na rota atual o prametro especificado na rota
+    const id = this.route.snapshot.paramMap.get('id'); //pegar na rota atual o parametro especificado na rota
     if(id){
       this.musicaService.getByID(parseInt(id)).subscribe( (musica) => {
         if(musica){

@@ -8,6 +8,7 @@ import {MusicRoutes} from "./music.routing";
 import {MatIconModule} from "@angular/material/icon";
 import {MatTableModule} from "@angular/material/table";
 import { FavoritesComponent } from './favorites/favorites.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
     CommonModule,
     RouterModule.forChild(MusicRoutes),
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule
   ]
 })
 export class MusicModule { }

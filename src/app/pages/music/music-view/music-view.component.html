@@ -1,1 +1,15 @@
-<p>music-view works!</p>
+<div style="margin: 0.75%">
+  <div class="Page-Title">
+    <h1>Bem-Vindo ao UpMusic, aqui estão as informações da música solicida!</h1>
+  </div>
+  <div class="Page-list">
+    <h2>{{musica.titulo}}</h2>
+    <p>Artista: {{musica.artista}}</p>
+    <p>Compositor: {{musica.compositor}}</p>
+    <p>Duração: {{musica.duracao}} segundos</p>
+    <p>Estilo Musical: {{musica.estiloMusical}}</p>
+  </div>
+  <a mat-flat-button class="botao-voltar" color="basic" [routerLink]="['', 'musicas']">
+    voltar
+  </a>
+</div>
