@@ -21,9 +21,9 @@ export class MusicaService {
 
   public salvar(musica: Musica): Observable<Musica>{
     if(!musica.idMusica){
-      return this.http.post<Musica>(this.urlBackend+"/musica", musica);
+      return this.http.post<Musica>(this.urlBackend+"/musica", musica); // Criar
     }else{
-      return this.http.patch<Musica>(this.urlBackend+"/musica/"+ musica.idMusica, musica);
+      return this.http.patch<Musica>(this.urlBackend+"/musica/"+ musica.idMusica, musica); // Alterar
     }
   }
 

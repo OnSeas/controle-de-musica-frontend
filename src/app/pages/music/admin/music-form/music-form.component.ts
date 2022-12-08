@@ -37,7 +37,7 @@ export class MusicFormComponent implements OnInit {
     this.musicaService.salvar(musica).subscribe((musica)=>{
       console.log(musica);
       alert("Musica "+acao+" com sucesso!");
-      this.router.navigate(['', 'admin', 'musica']) // <- Olhar isso sobre o caminho
+      this.router.navigate(['', 'admin', 'musica']) // Após Criar-Alterar voltar pra lista de musicas admin
     }, erro => {
       alert(erro?.error?.message);
       console.log(erro);
