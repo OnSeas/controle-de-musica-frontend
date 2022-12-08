@@ -26,8 +26,11 @@
       <ng-container matColumnDef="acao">
         <th mat-header-cell *matHeaderCellDef>Ações</th>
         <td mat-cell *matCellDef="let element">
-          <a mat-icon-button (click)="favoritar(element)">
+          <a mat-icon-button *ngIf="!element.favorito" (click)="favoritar(element)">
             <mat-icon>favorite_border</mat-icon>
+          </a>
+          <a mat-icon-button *ngIf="element.favorito" (click)="desFavoritar(element)">
+            <mat-icon color="primary">favorite</mat-icon>
           </a>
         </td>
       </ng-container>

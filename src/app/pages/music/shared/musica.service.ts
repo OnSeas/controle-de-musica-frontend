@@ -32,7 +32,7 @@ export class MusicaService {
   }
 
   public remover(id: number): Observable<Musica>{
-    return this.http.delete<Musica>(this.urlBackend+"/musica/"+id);
+    return this.http.delete<Musica>(this.urlBackend+"/musica/"+ id);
   }
 
   public favoritar(id: number): Observable<Musica>{

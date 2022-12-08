@@ -1,7 +1,8 @@
 <div style="margin: 0.75%">
   <div class="Page-Title">
     <h1>Bem-Vindo ao Controle de Musicas!</h1>
-    <a mat-button [routerLink]="['novo']">
+    <a mat-raised-button color="primary" [routerLink]="['novo']">
+      <mat-icon>add</mat-icon>
       Adcionar música
     </a>
   </div>
@@ -16,7 +17,9 @@
 
       <ng-container matColumnDef="titulo">
         <th mat-header-cell *matHeaderCellDef>Título</th>
-        <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+        <td mat-cell *matCellDef="let element">
+          <a [routerLink]="['visualizar', element.idMusica]" class="titulo-musica"> {{element.titulo}} </a>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="artista">

@@ -26,6 +26,7 @@ export class FavoritesComponent implements OnInit {
     let UnfavConfirmMsg = "Deseja tirar a música das favoritas?";
     if(confirm(UnfavConfirmMsg)) {
       this.musicaService.desFavoritar(musica.idMusica).subscribe(() => {
+        this.dataSource.data = this.dataSource.data.filter((element) => element.idMusica !== musica.idMusica);
         alert("Música removida dos favoritos!");
       }, erro => {
         alert("Erro ao remover música dos favoritos. Mensagem: " + erro?.error?.message);

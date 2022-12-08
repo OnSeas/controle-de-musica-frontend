@@ -4,31 +4,38 @@
   </div>
   <div class="Page-list">
     <form #formMusica="ngForm">
-      <label>Título:</label>
-      <input matInput
-             [(ngModel)]="musica.titulo" name="titulo"><br/>
-      <label>Artista:</label>
-      <input matInput
-             [(ngModel)]="musica.artista" name="artista"><br/>
-      <label>Compositor:</label>
-      <input matInput
-             [(ngModel)]="musica.compositor" name="compositor"><br/>
-      <label>Duração:</label>
-      <input matInput
-             [(ngModel)]="musica.duracao" name="duracao"><br/>
-      <label>Estilo Musical:</label>
-      <select [(ngModel)]="musica.estiloMusical" name="estiloMusical" id="Estilo">
-        <option value="POP">Pop</option>
-        <option value="REB">R&B</option>
-        <option value="MPB">Mpb</option>
-        <option value="ROCK">Rock</option>
-        <option value="FOLK">Folk</option>
-      </select>
+      <div class="form-row">
+        <label>Título</label>
+        <input matInput placeholder="Título"
+               [(ngModel)]="musica.titulo" name="titulo"><br/>
+        <label>Artista</label>
+        <input matInput placeholder="Artista"
+               [(ngModel)]="musica.artista" name="artista"><br/>
+      </div>
 
-      <input type="submit" title="Salvar" (click)="salvar(musica)">
+      <div class="form-row">
+        <label>Compositor</label>
+        <input matInput placeholder="Compositor"
+               [(ngModel)]="musica.compositor" name="compositor"><br/>
+        <label>Duração</label>
+        <input matInput placeholder="Duração"
+               [(ngModel)]="musica.duracao" name="duracao"><br/>
+        <label>Estilo Musical</label>
+        <select [(ngModel)]="musica.estiloMusical" name="estiloMusical" id="Estilo">
+          <option value="POP">Pop</option>
+          <option value="REB">R&B</option>
+          <option value="MPB">Mpb</option>
+          <option value="ROCK">Rock</option>
+          <option value="FOLK">Folk</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <a mat-flat-button class="botao-voltar" color="basic" [routerLink]="['', 'admin', 'musica']">
+          voltar
+        </a>
+        <input type="submit" title="Salvar" value="salvar" (click)="salvar(musica)">
+      </div>
     </form>
-    <a mat-button [routerLink]="['', 'admin', 'musica']">
-      voltar ao controle de músicas
-    </a>
   </div>
 </div>

@@ -1,6 +1,34 @@
-Musica-Form{
-  color: #1f1f1f;
-  min-width: 150px;
-  max-width: 500px;
+Form{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-row{
+  display: flex;
+  margin: 0.1%;
+}
+
+label{
+  margin: auto;
+}
+
+input, select{
+  margin: 2% 1%;
   width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+input[type=submit]{
+  background-color: #7b1fa2;
+  color: #fff;
+  font-weight: bold;
+}
+
+.botao-voltar{
+  width: 100%;
+  margin: 2% 1%;
 }
